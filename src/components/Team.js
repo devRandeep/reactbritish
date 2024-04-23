@@ -39,13 +39,13 @@ export default function Team() {
                                         <Row className="align-items-center">
                                             <Col md={3}>
                                                 <div className="profile_img">
-                                                    <img src={jane} alt="" />
+                                                    <img src={items.first_member_image} alt="" />
 
                                                 </div>
                                             </Col>
                                             <Col md={9}>
                                                 <div className="profile_text">
-                                                    <h3>Jane Farnham</h3>
+                                                    <h3>{items.first_person_name}</h3>
                                                 </div>
                                             </Col>
                                         </Row>
@@ -62,13 +62,13 @@ export default function Team() {
                                         <Row className="align-items-center">
                                             <Col md={3}>
                                                 <div className="profile_img">
-                                                    <img src={Steve} alt="" />
+                                                    <img src={items.second_member_image} alt="" />
 
                                                 </div>
                                             </Col>
                                             <Col md={9}>
                                                 <div className="profile_text">
-                                                    <h3>Steve Denison</h3>
+                                                    <h3>{items.second_person_name}</h3>
                                                 </div>
                                             </Col>
                                         </Row>

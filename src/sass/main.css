@@ -310,4 +310,135 @@ footer .footer_right .term_and_condition li {
 }
 .we_supply_slider .card .card_title a {
   color: #007bff;
+}
+
+.about_panel {
+  padding: 0px 40px;
+  height: 100vh;
+}
+
+.page_breadcrumbs {
+  height: 36vw;
+}
+.page_breadcrumbs .text_panel_breadcrumbs {
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://greatbritish.b-cdn.net/static/css/img/flag.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0px 40px;
+  padding-top: 6vw;
+}
+.page_breadcrumbs .text_panel_breadcrumbs h1 {
+  font-size: 4.97vw;
+  color: #fff;
+  display: grid;
+  font-weight: 400;
+}
+.page_breadcrumbs .text_panel_breadcrumbs_image {
+  height: 100%;
+}
+.page_breadcrumbs .text_panel_breadcrumbs_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.contact_form_img {
+  text-align: center;
+}
+.contact_form_img img {
+  width: 35vw;
+}
+
+.contact_form h3 {
+  margin-bottom: 30px;
+}
+
+.get_in_touch {
+  padding: 40px;
+  margin-bottom: 3rem;
+}
+.get_in_touch .footer_details {
+  background-color: #ed174b;
+  padding: 1.5rem;
+}
+.get_in_touch .footer_details ul li {
+  margin-bottom: 1rem;
+}
+.get_in_touch .footer_details ul li svg {
+  margin-right: 1rem;
+}
+.get_in_touch .footer_details ul li a {
+  font-size: 1.31vw;
+}
+
+.call_panel {
+  background: #1c1c1c;
+  padding: 40px;
+}
+.call_panel .row {
+  background-color: #e5eff9;
+  border-radius: 10px;
+  padding: 22px;
+}
+.call_panel .call_btn {
+  font-size: 1.5rem;
+  font-weight: 500;
+  background: #2870ac;
+  color: #fff;
+  padding: 1rem;
+  border: none;
+}
+.call_panel .call_btn svg {
+  margin-right: 10px;
+}
+
+.text_contact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.text_contact p {
+  font-size: 1.5rem;
+  margin: 0px;
+  font-weight: 500;
+  font-family: roboto;
+}
+
+.input_group {
+  margin-bottom: 20px;
+}
+.input_group textarea {
+  height: 288px;
+}
+.input_group button {
+  max-width: 150px;
+  background: #ed174b;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  border: none;
+  padding: 10px 40px;
+  float: right;
+}
+
+.input_design {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #707070;
+  outline: none;
+}
+.input_design::-moz-placeholder {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: roboto;
+}
+.input_design::placeholder {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: roboto;
 }/*# sourceMappingURL=main.css.map */
