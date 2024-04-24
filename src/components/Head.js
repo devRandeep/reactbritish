@@ -24,10 +24,10 @@ export default function Header() {
             <Col md={4}>
               <ul className="appMenuList">
                 <li>
-                  <Link to="/" exact activeClassName="menuActive">Home</Link>
+                  <NavLink to="/" exact>Home</NavLink>
                   </li>
                   <li>
-                  <Link to="/about" exact>About</Link>
+                  <NavLink to="/about" exact>About</NavLink>
                 </li>                
               </ul>
             </Col>

@@ -53,6 +53,11 @@ header {
 .appMenuList li a {
   font: 800 16px "Roboto", sans-serif;
   color: #fff;
+  padding: 20px 10px;
+  border-top: 5px solid #1c1c1c;
+}
+.appMenuList li .active {
+  border-color: #fff;
 }
 
 header li {
@@ -158,6 +163,13 @@ header li a {
 }
 .img_box img {
   width: 40vw;
+}
+
+.aboutUs .img_box {
+  background: #1c1c1c;
+}
+.aboutUs .img_box {
+  padding: 5vw 7.6vh;
 }
 
 .brand_logo {
@@ -272,15 +284,38 @@ footer .footer_right .term_and_condition li {
 }
 
 .we_supply {
-  padding: 0px 40px;
+  padding: 4.8rem 40px;
   padding-bottom: 40px;
 }
-
-.we_supply_slider {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
+.we_supply .heading_panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+.we_supply .slide_arrow {
+  background: #1c1c1c;
+  height: 46px;
+  width: 46px;
+  text-align: center;
+  border: none;
+  color: #fff;
+  margin: 0px 5px;
+  font-family: "FontAwesome";
+}
+.we_supply .slide_arrow i {
+  font-style: normal;
+}
+.we_supply .slide_arrow:hover {
+  background-color: #2870ac;
+}
+
+.about_supply .we_supply {
+  background: #000;
+}
+.about_supply .we_supply h3 {
+  color: #fff;
+}
+
 .we_supply_slider .card {
   text-align: center;
   background: #e5eff9;
@@ -320,6 +355,9 @@ footer .footer_right .term_and_condition li {
 .page_breadcrumbs {
   height: 36vw;
 }
+.page_breadcrumbs .row {
+  height: 100%;
+}
 .page_breadcrumbs .text_panel_breadcrumbs {
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://greatbritish.b-cdn.net/static/css/img/flag.jpg);
@@ -342,6 +380,10 @@ footer .footer_right .term_and_condition li {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.about_breadcrumbs {
+  height: 100vh;
 }
 
 .contact_form_img {
@@ -394,6 +436,10 @@ footer .footer_right .term_and_condition li {
   margin-right: 10px;
 }
 
+.about_callpanel .call_panel {
+  background: #fff;
+}
+
 .text_contact {
   display: flex;
   align-items: center;
@@ -441,4 +487,27 @@ footer .footer_right .term_and_condition li {
   font-size: 1rem;
   font-weight: 600;
   font-family: roboto;
+}
+
+.react-multi-carousel-track {
+  gap: 20px;
+  padding-bottom: 30px !important;
+  overflow: visible !important;
+}
+
+.react-multi-carousel-dot--active button {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.react-multi-carousel-dot-list {
+  margin-top: 12px;
+}
+
+.react-multi-carousel-dot button {
+  border: none !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
+  background: rgba(0, 0, 0, 0.5) !important;
 }/*# sourceMappingURL=main.css.map */

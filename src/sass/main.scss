@@ -58,6 +58,11 @@ header {
         a {
             font: 800 16px "Roboto", sans-serif;
             color: #fff;
+            padding: 20px 10px;
+            border-top: 5px solid #1c1c1c;
+        }
+        .active {
+            border-color: #fff;
         }
     }
 }
@@ -166,6 +171,15 @@ header {
     width: 100%;
     img {
         width: 40vw;
+    }
+}
+
+.aboutUs {
+    .img_box {
+        background: #1c1c1c;
+    }
+    .img_box {
+        padding: 5vw 7.6vh;
     }
 }
 
@@ -294,14 +308,44 @@ footer {
 }
 
 .we_supply {
-    padding: 0px 40px;
+    padding: 4.8rem 40px;
     padding-bottom: 40px;
+    .heading_panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .slide_arrow {
+        background: #1c1c1c;
+        height: 46px;
+        width: 46px;
+        text-align: center;
+        border: none;
+        color: #fff;
+        margin: 0px 5px;
+        font-family: 'FontAwesome';
+        i {
+            font-style: normal;
+        }
+        &:hover {
+            background-color: #2870ac;
+        }
+    }
+}
+
+.about_supply {
+    .we_supply {
+        background: #000;
+        h3 {
+            color: #fff
+        }
+    }
 }
 
 .we_supply_slider {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // gap: 30px;
     .card {
         text-align: center;
         background: #e5eff9;
@@ -339,6 +383,9 @@ footer {
 }
 
 .page_breadcrumbs {
+    .row {
+        height: 100%;
+    }
     height: 36vw;
     .text_panel_breadcrumbs {
         height: 100%;
@@ -362,6 +409,10 @@ footer {
             object-fit: cover;
         }
     }
+}
+
+.about_breadcrumbs {
+    height: 100vh;
 }
 
 .contact_form_img {
@@ -418,6 +469,12 @@ footer {
     }
 }
 
+.about_callpanel {
+    .call_panel {
+        background: #fff;
+    }
+}
+
 .text_contact {
     display: flex;
     align-items: center;
@@ -458,5 +515,30 @@ footer {
         font-size: 1rem;
         font-weight: 600;
         font-family: roboto;
+    }
+}
+
+.react-multi-carousel-track {
+    gap: 20px;
+    padding-bottom: 30px !important;
+    overflow: visible !important;
+}
+
+.react-multi-carousel-dot--active button {
+    background: rgba(0, 0, 0, .5) !important;
+}
+
+.react-multi-carousel-dot-list {
+    margin-top: 12px;
+}
+
+.react-multi-carousel-dot button {
+    border: none !important;
+    background: rgba(0, 0, 0, .2)!important;
+}
+
+li.react-multi-carousel-dot.react-multi-carousel-dot--active {
+    button {
+        background: rgba(0, 0, 0, .5)!important;
     }
 }
