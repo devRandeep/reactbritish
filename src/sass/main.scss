@@ -38,6 +38,7 @@ p {
 }
 
 header {
+    border-bottom: 4px solid #ed174b;
     background: #1c1c1c;
     padding: 10px 40px;
 }
@@ -556,5 +557,16 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active {
     td {
         border: 1px solid;
         padding: .5em;
+    }
+}
+
+.error {
+    height: 100%;
+    background: #ed174b;
+    font-family: roboto;
+    color: #fff;
+    a {
+        color: #fff;
+        text-decoration: underline;
     }
 }

@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Privacy from "./components/Privacy";
 import Terms from "./components/Terms";
-
+import Error from "./components/Error";
 
 <script
   src="https://cdn.jsdelivr.net/npm/react-bootstrap@next/dist/react-bootstrap.min.js"
