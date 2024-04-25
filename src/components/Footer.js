@@ -60,7 +60,7 @@ export default function Footer() {
                     <Link to="/privacy" exact>Privacy | </Link>
                   </li>
                   <li>
-                    <Link to="/term_condition" exact>Terms of Service | </Link>
+                    <Link to="/tc" exact>Terms of Service | </Link>
                   </li>
                   <li>Great British UK © 2024</li>
                 </ul>

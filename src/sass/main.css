@@ -510,4 +510,20 @@ footer .footer_right .term_and_condition li {
 
 li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.term_condition_text_box {
+  padding: 50px 40px;
+}
+.term_condition_text_box h3 {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+.wp-block-table {
+  font-size: 1.125rem;
+}
+.wp-block-table td {
+  border: 1px solid;
+  padding: 0.5em;
 }/*# sourceMappingURL=main.css.map */

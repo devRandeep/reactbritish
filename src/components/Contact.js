@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Row, Container, Col } from "react-bootstrap";
+import { Row, Container, Col, Form } from "react-bootstrap";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Team from "./Team";
 import Pagebread from "./Pagebread";
 import Callnumber from "./Callnumber";
+
 
 
 export default function Contact() {
@@ -17,9 +18,18 @@ export default function Contact() {
         setIsLoaded(true);
       });
   }, []);
+
+
+  // ================ Submit Form;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let form = new FormData(e.target);
+    let formObj = Object.fromEntries(form.entries());
+    console.log(formObj);
+  }
+
   return (
     <>
-
 
       <Pagebread />
       {/* ==================== Get In Touch */}
@@ -28,7 +38,8 @@ export default function Contact() {
           <Col md={6}>
             <div className="contact_form">
               <h3>Get In Touch</h3>
-              <form className="submit_form">
+              
+              <form className="submit_form" onSubmit={handleSubmit}>  
                 {/* Input */}
                 <div className="input_group">
                   <input type="text" placeholder="name"  name="name"className="input_design" />
@@ -45,15 +56,15 @@ export default function Contact() {
                   <textarea placeholder="Message" name="message" className="input_design" />
                 </div>
                 <div className="input_group">
-                  <button className="btn_site">Send</button>
+                  <button className="btn_site" type="submit">Send</button>
                 </div>
-
               </form>
+
             </div>
           </Col>
           <Col md={6}>
             <div className="contact_form_img">
-              <img src={items.contact_image} alt="" />
+              <img src={items.about_image} alt="" />
             </div>
             <Col md={12}>
               <div className="footer_details">

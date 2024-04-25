@@ -29,9 +29,9 @@ export default function Wesupply() {
 
     const SupplyCard = [
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/spoon-plate.png",
+            cardTitle: "After-Dinner Speakers",
+            cardUrl:"https://www.greatbritishtalent.com/static/css/img/spoon-plate.png",
         },
         {
             iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
@@ -39,46 +39,22 @@ export default function Wesupply() {
             cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
         },
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
+            cardTitle: "Conference Facilitators",
+            cardUrl:"https://www.greatbritishtalent.com/static/css/img/faces.png",
         },
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
+            cardTitle: "Sports Speakers",
+            cardUrl:"https://www.greatbritishtalent.com/static/css/img/faces.png",
         },
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
+            cardTitle: "News Broadcasters",
+            cardUrl:"https://www.greatbritishtalent.com/static/css/img/faces.png",
+        },       
         // Other SupplyCard items...
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
+       
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);

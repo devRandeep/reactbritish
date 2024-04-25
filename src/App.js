@@ -28,7 +28,7 @@ function App() {
         <Route exact path="/about" component={About} />
         <Route exact path="/contactus" component={Contact} />
         <Route exact path="/privacy" component={Privacy} />
-        <Route exact path="/term_condition" component={Terms} />
+        <Route exact path="/tc" component={Terms} />
         <Route component={Error} />
       </Switch>
       
