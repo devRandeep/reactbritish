@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 export default function Terms() {
 
@@ -15,6 +16,12 @@ export default function Terms() {
   return (
     <div>
       <>
+      <Helmet>
+			<title>Terms &#038; Conditions   - Great British UK Talent</title>
+      <meta charSet="utf-8" />			
+			<meta name="description" content="About page" />
+			<link rel="canonical" href="http://mysite.com/example" />
+    </Helmet>
       <section className='terms_and_condition'>
         <div className="term_condition_text_box" dangerouslySetInnerHTML={{__html: items.content}}>         
         </div>

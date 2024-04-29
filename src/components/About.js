@@ -4,6 +4,7 @@ import Pagebread from "./Pagebread";
 import { Col, Row } from "react-bootstrap";
 import Callnumber from "./Callnumber";
 import Wesupply from "./Wesupply";
+import { Helmet } from "react-helmet";
 
 export default function About() {
 
@@ -18,9 +19,14 @@ export default function About() {
       });
   }, []);
 
-
   return (
     <>
+    <Helmet>
+			<title>About - Great British UK Talent</title>
+      <meta charSet="utf-8" />			
+			<meta name="description" content="About page" />
+			<link rel="canonical" href="http://mysite.com/example" />
+    </Helmet>
     {/* ================= First Fold */}
       <section className='page_breadcrumbs about_breadcrumbs'>
         <Row>

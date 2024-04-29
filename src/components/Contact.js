@@ -4,6 +4,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Team from "./Team";
 import Pagebread from "./Pagebread";
 import Callnumber from "./Callnumber";
+import { Helmet } from "react-helmet";
 
 
 
@@ -29,7 +30,11 @@ export default function Contact() {
   }
 
   return (
-    <>
+    <>  
+
+    <Helmet>
+			<title>Contact - Great British UK Talent</title>
+    </Helmet>
 
       <Pagebread />
       {/* ==================== Get In Touch */}
