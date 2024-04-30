@@ -18,7 +18,7 @@ export default function About() {
         setIsLoaded(true);
       });
   }, []);
-
+  if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
   return (
     <>
     <Helmet>

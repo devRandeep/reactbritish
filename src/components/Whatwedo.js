@@ -14,7 +14,7 @@ export default function Whatwedo() {
 			});
 	}, []);
 
-  
+	if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
   return (
    <>
         <section className="what_we_do">

@@ -6,55 +6,61 @@ import 'react-multi-carousel/lib/styles.css';
 export default function Wesupply() {
     const supplySlider = {
         superLargeDesktop: {
-          breakpoint: { max: 4000, min: 3000 },
-          items: 4,
-          gap: 20,
+            breakpoint: { max: 4000, min: 3000 },
+            items: 4,
+            gap: 20,
         },
         desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 4,
-          gap: 20,
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4,
+            gap: 20,
         },
         tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 3,
-          gap: 20,
+            breakpoint: { max: 1024, min: 464 },
+            items: 3,
+            gap: 20,
         },
         mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 3,
-          gap: 20,
+            breakpoint: { max: 464, min: 0 },
+            items: 3,
+            gap: 20,
         }
     };
 
     const SupplyCard = [
         {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/spoon-plate.png",
-            cardTitle: "After-Dinner Speakers",
-            cardUrl:"https://www.greatbritishtalent.com/static/css/img/spoon-plate.png",
-        },
-        {
             iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
-            cardTitle: "International Voices",
-            cardUrl:"https://greatbritishvoices.co.uk/voice/international-voice-overs/",
-        },
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
-            cardTitle: "Conference Facilitators",
-            cardUrl:"https://www.greatbritishtalent.com/static/css/img/faces.png",
-        },
-        {
-            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
-            cardTitle: "Sports Speakers",
-            cardUrl:"https://www.greatbritishtalent.com/static/css/img/faces.png",
+            cardTitle: "Celebrity Voice Overs",
+            cardUrl: "https://greatbritishvoices.co.uk/celebrity-voice-overs/",
         },
         {
             iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
             cardTitle: "News Broadcasters",
-            cardUrl:"https://www.greatbritishtalent.com/static/css/img/faces.png",
-        },       
+            cardUrl: "https://greatbritishpresenters.co.uk/voice/international-voice-overs/",
+        },
+        {
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/mic.png",
+            cardTitle: "International Voices",
+            cardUrl: "https://greatbritishvoices.co.uk/voice/international-voice-overs/",
+        },
+        {
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
+            cardTitle: "Conference Facilitators",
+            cardUrl: "https://greatbritishpresenters.co.uk/presenters/conference-facilitators/",
+        },
+        {
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/faces.png",
+            cardTitle: "Sports Speakers",
+            cardUrl: "https://greatbritishspeakers.co.uk/speaker/sports-speakers/",
+        },
+
+        {
+            iconUrl: "https://www.greatbritishtalent.com/static/css/img/spoon-plate.png",
+            cardTitle: "After-Dinner Speakers",
+            cardUrl: "https://greatbritishspeakers.co.uk/speaker/after-dinner-speakers/",
+        },
         // Other SupplyCard items...
-       
+
     ];
 
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -87,9 +93,9 @@ export default function Wesupply() {
             </Row>
             <Row>
                 <div className="we_supply_slider">
-                    <Carousel 
+                    <Carousel
                         ref={carouselRef}
-                        showDots={true} 
+                        showDots={true}
                         responsive={supplySlider}
                         beforeChange={(current, next) => setCurrentSlide(next)}
                         removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
@@ -100,8 +106,8 @@ export default function Wesupply() {
                                     <img src={itemcard.iconUrl} alt="" />
                                 </div>
                                 <div className="card_title">
-                                    <p><a href={itemcard.cardUrl}>{itemcard.cardTitle}</a></p>
-                                </div>  
+                                    <p><a href={itemcard.cardUrl} target="_blank">{itemcard.cardTitle}</a></p>
+                                </div>
                             </div>
                         ))}
                     </Carousel>

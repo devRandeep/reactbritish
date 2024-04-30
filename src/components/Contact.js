@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Row, Container, Col, Form } from "react-bootstrap";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Row, Col } from "react-bootstrap";
 import Team from "./Team";
 import Pagebread from "./Pagebread";
 import Callnumber from "./Callnumber";
 import { Helmet } from "react-helmet";
 
-
-
 export default function Contact() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+
   useEffect(() => {
     fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/3078")
       .then((res) => res.json())
@@ -20,21 +26,48 @@ export default function Contact() {
       });
   }, []);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
-  // ================ Submit Form;
   const handleSubmit = (e) => {
     e.preventDefault();
-    let form = new FormData(e.target);
-    let formObj = Object.fromEntries(form.entries());
-    console.log(formObj);
-  }
+    setSubmitting(true);
+    setSubmitError(null);
+    fetch('https://www.greatbritishtalent.com/wp-json/contact-form-7/v1/contact-forms/1932/feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      // Handle success response here if needed
+      console.log('Form submitted successfully');
+      setSubmitting(false);
+    })
+    .catch(error => {
+      // Handle error
+      console.error('There was a problem submitting the form:', error);
+      setSubmitting(false);
+      setSubmitError('There was a problem submitting the form. Please try again later.');
+    });
+  };
+
+  if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
 
   return (
-    <>  
-
-    <Helmet>
-			<title>Contact - Great British UK Talent</title>
-    </Helmet>
+    <>
+      <Helmet>
+        <title>Contact - Great British UK Talent</title>
+      </Helmet>
 
       <Pagebread />
       {/* ==================== Get In Touch */}
@@ -43,25 +76,30 @@ export default function Contact() {
           <Col md={6}>
             <div className="contact_form">
               <h3>Get In Touch</h3>
-              
-              <form className="submit_form" onSubmit={handleSubmit}>  
+
+              <form className="submit_form" onSubmit={handleSubmit}>
                 {/* Input */}
                 <div className="input_group">
-                  <input type="text" placeholder="name"  name="name"className="input_design" />
-                </div>
-                {/* Input */}
-                <div className="input_group">
-                  <input type="text" placeholder="Email" name="email" className="input_design" />
+                  <input type="text" placeholder="name" name="your-name" className="input_design" id="name" value={formData.name}
+                    onChange={handleChange} />
                 </div>
                 {/* Input */}
                 <div className="input_group">
-                  <input type="text" placeholder="Contact Number" name="phone" className="input_design" />
+                  <input type="text" placeholder="Email" name="your-email" id="email" className="input_design" value={formData.email}
+                    onChange={handleChange} />
+                </div>
+                {/* Input */}
+                <div className="input_group">
+                  <input type="text" placeholder="Contact Number" name="number-942" id="phone" className="input_design" value={formData.phone}
+                    onChange={handleChange} />
                 </div>
                 <div className="input_group">
-                  <textarea placeholder="Message" name="message" className="input_design" />
+                  <textarea placeholder="Message" name="your-message" id="message" className="input_design"  value={formData.message}
+          onChange={handleChange}/>
                 </div>
                 <div className="input_group">
-                  <button className="btn_site" type="submit">Send</button>
+                  <button className="btn_site" type="submit" disabled={submitting}>Send</button>
+                  {submitError && <p className="submit-error">{submitError}</p>}
                 </div>
               </form>
 

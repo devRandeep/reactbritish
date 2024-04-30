@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
-
 export default function Hero() {
     const [items, setItems] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -11,8 +10,10 @@ export default function Hero() {
             .then((json) => {
                 setItems(json.acf);
                 setIsLoaded(true);
+
             });
     }, []);
+    if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
     return (
         <>
             <section className="section_first">
