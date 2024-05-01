@@ -22,8 +22,9 @@ export default function Wesupply() {
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 3,
-            gap: 20,
+            items: 1,
+            gap: 10,
+            centerSlide:true,
         }
     };
 

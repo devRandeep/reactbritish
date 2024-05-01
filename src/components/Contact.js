@@ -4,18 +4,21 @@ import Team from "./Team";
 import Pagebread from "./Pagebread";
 import Callnumber from "./Callnumber";
 import { Helmet } from "react-helmet";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
   const [items, setItems] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
+  const [fieldData, setFieldData] = useState({
+    your_name: '',
+    your_email: '',
+    your_number: '',
+    your_message: '',
+    _wpcf7_unit_tag: 1932
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   useEffect(() => {
     fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/3078")
@@ -28,8 +31,8 @@ export default function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFieldData({
+      ...fieldData,
       [name]: value
     });
   };
@@ -38,27 +41,54 @@ export default function Contact() {
     e.preventDefault();
     setSubmitting(true);
     setSubmitError(null);
+    setSubmitSuccess(false);
+
+    // Email validation 
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(fieldData.your_email)) {
+      setSubmitError('Invalid email format');
+      setSubmitting(false);
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('your_name', fieldData.your_name);
+    formData.append('your_email', fieldData.your_email);
+    formData.append('your_number', fieldData.your_number);
+    formData.append('_wpcf7_unit_tag', 1932);
+    formData.append('your_message', fieldData.your_message);
+
     fetch('https://www.greatbritishtalent.com/wp-json/contact-form-7/v1/contact-forms/1932/feedback', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      body: JSON.stringify(formData)
+      body: formData
     })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      // Handle success response here if needed
-      console.log('Form submitted successfully');
-      setSubmitting(false);
-    })
-    .catch(error => {
-      // Handle error
-      console.error('There was a problem submitting the form:', error);
-      setSubmitting(false);
-      setSubmitError('There was a problem submitting the form. Please try again later.');
-    });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        setSubmitSuccess(true);
+        setFieldData({
+          your_name: '',
+          your_email: '',
+          your_number: '',
+          your_message: '',
+          _wpcf7_unit_tag: 1932
+        });
+        // alert('Form Submitted Successfully !!');
+        setSubmitting(false);
+      })
+      .catch(error => {
+        // Handle error
+        console.error('There was a problem submitting the form:', error);
+        setSubmitting(false);
+        setSubmitError('There was a problem submitting the form. Please try again later.');
+      });
+  };
+  // This function is called when ReCAPTCHA changes state;
+  const recaptchaRef = React.createRef();
+  const onChange = () => {
+
   };
 
   if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
@@ -77,30 +107,45 @@ export default function Contact() {
             <div className="contact_form">
               <h3>Get In Touch</h3>
 
-              <form className="submit_form" onSubmit={handleSubmit}>
+              <form className="submit_form" onSubmit={handleSubmit} encType="multipart/form-data">
                 {/* Input */}
                 <div className="input_group">
-                  <input type="text" placeholder="name" name="your-name" className="input_design" id="name" value={formData.name}
+                  <input type="text" placeholder="name" name="your_name" className="input_design" id="name" required value={fieldData.your_name}
                     onChange={handleChange} />
                 </div>
                 {/* Input */}
                 <div className="input_group">
-                  <input type="text" placeholder="Email" name="your-email" id="email" className="input_design" value={formData.email}
+                  <input type="text" placeholder="Email" name="your_email" id="email" className="input_design" required value={fieldData.your_email}
                     onChange={handleChange} />
-                </div>
-                {/* Input */}
-                <div className="input_group">
-                  <input type="text" placeholder="Contact Number" name="number-942" id="phone" className="input_design" value={formData.phone}
-                    onChange={handleChange} />
-                </div>
-                <div className="input_group">
-                  <textarea placeholder="Message" name="your-message" id="message" className="input_design"  value={formData.message}
-          onChange={handleChange}/>
-                </div>
-                <div className="input_group">
-                  <button className="btn_site" type="submit" disabled={submitting}>Send</button>
                   {submitError && <p className="submit-error">{submitError}</p>}
                 </div>
+                {/* Input */}
+                <div className="input_group">
+                  <input type="text" placeholder="Contact Number" name="your_number" id="phone" className="input_design" required value={fieldData.your_number}
+                    onChange={handleChange} />
+                </div>
+                <div className="input_group">
+                  <textarea placeholder="Message" name="your_message" id="message" className="input_design" required value={fieldData.your_message}
+                    onChange={handleChange} />
+                </div>
+                <div className="input_group">
+                  <button className="btn_site" type="submit" disabled={submitting}>
+                    {submitting ? 'Submitting...' : 'Send'}
+                  </button>
+                </div>
+                <div className="input_group">
+                  {/* {submitError && <p className="submit-error">{submitError}</p>} */}
+                  <div className="input_group">
+                    <ReCAPTCHA
+                      sitekey="Your_site_key"
+                      ref={recaptchaRef}
+                      size="invisible"
+                      onChange={onChange}
+                    />
+                  </div>
+                  {submitSuccess && <div className="submit-success"> <p><img src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/good-job-hand-2-svgrepo-com.png" alt="" />Thank You For Contacting!</p> <span>We will get back to you shortly.</span></div>}
+                </div>
+
               </form>
 
             </div>

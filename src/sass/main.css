@@ -38,6 +38,42 @@ p {
   font-size: 18px;
 }
 
+.submit-error {
+  color: #ed174b;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.submit-success {
+  width: -moz-fit-content;
+  width: fit-content;
+  background: #ddd;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: rgb(230, 255, 217);
+  background: linear-gradient(0deg, rgb(230, 255, 217) 0%, rgb(187, 246, 157) 100%);
+  border: 1px solid rgba(9, 173, 9, 0.15);
+}
+.submit-success p {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(9, 173, 9);
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+.submit-success span {
+  font-size: 12px;
+  color: #0a3101;
+  font-weight: 500;
+}
+.submit-success img {
+  width: 30px;
+}
+
 header {
   border-bottom: 4px solid #ed174b;
   background: #1c1c1c;
@@ -84,7 +120,7 @@ header li a {
 .section_first {
   height: 70vh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .section_first .column_first {
   height: 100%;
@@ -132,7 +168,7 @@ header li a {
 
 .what_we_do {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .what_we_do_box {
@@ -573,5 +609,161 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
 @keyframes l3 {
   to {
     transform: rotate(1turn);
+  }
+}
+.skeleton-loader {
+  width: 27vw;
+  height: 26.979vw;
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.loading-animation {
+  overflow: hidden;
+  background: #f3698b;
+}
+
+.loading-animation::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  animation: loading 1s infinite;
+  background: linear-gradient(to right, transparent, #fa8aa6, transparent);
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.mobileHeader {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobileHeader {
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+  .desktopHeader {
+    display: none;
+  }
+  .mehuToggleButton {
+    display: grid;
+    row-gap: 10px;
+  }
+  .mehuToggleButton span {
+    width: 6%;
+    height: 2px;
+    background: #ccc;
+  }
+  .logoWrap img {
+    width: 100%;
+  }
+  .skeleton-loader {
+    width: 80%;
+    height: 307px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  .section_first .column_second img {
+    width: 80%;
+    margin: 0px auto;
+  }
+  .section_first .column_first {
+    justify-content: center;
+  }
+  .section_first .column_first h1 {
+    font-size: 58px;
+    justify-content: center;
+    text-align: center;
+  }
+  .what_we_do_box {
+    padding: 10px 10px;
+  }
+  .img_box img {
+    width: 100%;
+  }
+  .react-multi-carousel-track {
+    gap: 0;
+  }
+  .we_supply_slider .card {
+    box-shadow: none !important;
+  }
+  .we_supply_slider .card .card_title {
+    padding-top: 41px;
+    padding-bottom: 22px;
+  }
+  .we_supply_slider .card .card_title a {
+    font-size: 17px;
+  }
+  .extra-width {
+    width: inherit;
+    display: grid;
+    row-gap: 10px;
+  }
+  .extra-width .profile_text {
+    text-align: center;
+  }
+  .extra-width .profile_text h3 {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: block;
+    margin: 0px auto;
+    margin-top: 10px;
+  }
+  .profile_img img {
+    height: 137px;
+    width: 137px !important;
+    margin: 0px auto;
+    display: block;
+  }
+  .card .card_text {
+    text-align: center;
+  }
+  .card .card_text p {
+    font-size: 12px;
+    line-height: 24px;
+  }
+  .our_team_red_box {
+    padding: 10px;
+  }
+  .our_team_red_box .lets_talk {
+    display: none;
+  }
+  .our_team_red_box .title_row {
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    text-align: center;
+    justify-content: center;
+  }
+  footer .footer_details ul li a {
+    font-size: 14px;
+  }
+  footer .footer_right .social_media_links {
+    justify-content: start;
+  }
+  footer .footer_right .term_and_condition {
+    justify-content: start;
+  }
+  footer .footer_right .term_and_condition li {
+    font-size: 12px;
+  }
+  footer .footer_right .term_and_condition li a {
+    font-size: 12px;
   }
 }/*# sourceMappingURL=main.css.map */

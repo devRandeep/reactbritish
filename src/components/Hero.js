@@ -13,7 +13,7 @@ export default function Hero() {
 
             });
     }, []);
-    if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
+    // if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
     return (
         <>
             <section className="section_first">
@@ -35,7 +35,11 @@ export default function Hero() {
                     </Container>
                 </div>
                 <div className="column_second">
-                    <img src={items.first_section_image_home_gbuk} alt="" />
+                {isLoaded ? (
+                        <img src={items.first_section_image_home_gbuk} alt="" />
+                    ) : (
+                        <div className="skeleton-loader loading-animation"></div>
+                    )}
                 </div>
             </section>
 

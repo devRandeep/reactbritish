@@ -10,12 +10,9 @@ export default function Header() {
   const logoImage = "https://greatbritish.b-cdn.net/wp-content/uploads/2022/01/gbt-logo.png"
 
   return (
-
     <>
-
-
       <header>
-        <Row className="align-items-center">
+        <Row className="align-items-center desktopHeader">
           <Col md={4}>
             <div className="logoWrap">
               <Link to="/">
@@ -41,6 +38,19 @@ export default function Header() {
               </li>
             </ul>
           </Col>
+        </Row>
+
+        <Row className="mobileHeader">
+          <div className="logoWrap">
+            <Link to="/">
+              <img src={logoImage} alt="" />
+            </Link>
+          </div>
+          <div className="mehuToggleButton">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </Row>
 
       </header>

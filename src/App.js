@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/main.css";
+import "./sass/responsive.css";
 import Head from "./components/Head";
 import Home from "./components/Home";
 import About from "./components/About";
