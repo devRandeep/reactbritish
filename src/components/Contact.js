@@ -154,7 +154,7 @@ export default function Contact() {
                     onChange={handleChange} />
                 </div>
                 <div className="input_group captachaPanel">
-                  <ReCAPTCHA sitekey="Your client site key" onChange={onChange} />
+                  <ReCAPTCHA sitekey="6LdHCM4pAAAAAFqVjLpn9YbO851K_eWCxourodtW" onChange={onChange} />
                 </div>
                 <div className="input_group">
                   <button className="btn_site" type="submit" disabled={submitting} >
