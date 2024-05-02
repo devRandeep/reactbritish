@@ -25,7 +25,7 @@ export default function Pagebread() {
                         <h1>{items.heading}</h1>
                 </div>
                 </Col>
-                <Col md={5} className='p-0'>
+                <Col md={5} className='p-0 d-sm-done d-md-block d-none'>
                 <div className="text_panel_breadcrumbs_image">
                     <img src={items.right_image} alt="" />
                 </div>

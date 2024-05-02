@@ -5,6 +5,7 @@ import Pagebread from "./Pagebread";
 import Callnumber from "./Callnumber";
 import { Helmet } from "react-helmet";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Verified } from "@mui/icons-material";
 
 export default function Contact() {
   const [items, setItems] = useState([]);
@@ -85,18 +86,42 @@ export default function Contact() {
         setSubmitError('There was a problem submitting the form. Please try again later.');
       });
   };
-  // This function is called when ReCAPTCHA changes state;
-  const recaptchaRef = React.createRef();
-  const onChange = () => {
 
-  };
 
   if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
+
+  // This function ReCAPTCHA;  
+  const ReCaptcha = () => {
+    const [Verified, setVerifed] = useState(false);
+  }
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
 
   return (
     <>
       <Helmet>
-        <title>Contact - Great British UK Talent</title>
+        <title>Contact  | Great British UK Talent</title>
+        <meta name="description" content="To hire presenters, hosts, facilitators, moderators, speakers, and VO artists contact Great British UK - GBPresenters, GBSpeakers &amp; GBVoices +441753 439289" />
+        <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+        <link rel="canonical" href="https://www.greatbritishtalent.com/contact/" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Hire Presenters, Voices and Speakers | Great British Talent" />
+        <meta property="og:description" content="To hire presenters, hosts, facilitators, moderators, speakers, and VO artists contact Great British UK - GBPresenters, GBSpeakers &amp; GBVoices +441753 439289" />
+        <meta property="og:url" content="https://www.greatbritishtalent.com/contact/" />
+        <meta property="og:site_name" content="Great British UK Talent" />
+        <meta property="article:publisher" content="https://www.facebook.com/greatbritishuk/?eid=ARBEBsDSmin8d9tCfXL7l49QmCMPTaStI8xFjGkTf1IRofrFdSnhtp5C7UB_yEP5_Ipg2iEWZCTWUI5_" />
+        <meta property="og:updated_time" content="2024-04-30T12:17:16+00:00" />
+        <meta property="article:published_time" content="2020-05-22T17:36:19+00:00" />
+        <meta property="article:modified_time" content="2024-04-30T12:17:16+00:00" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hire Presenters, Voices and Speakers | Great British Talent" />
+        <meta name="twitter:description" content="To hire presenters, hosts, facilitators, moderators, speakers, and VO artists contact Great British UK - GBPresenters, GBSpeakers &amp; GBVoices +441753 439289" />
+        <meta name="twitter:site" content="@greatbritishuk" />
+        <meta name="twitter:creator" content="@greatbritishuk" />
+        <meta name="twitter:label1" content="Time to read" />
+        <meta name="twitter:data1" content="Less than a minute" />
       </Helmet>
 
       <Pagebread />
@@ -128,21 +153,16 @@ export default function Contact() {
                   <textarea placeholder="Message" name="your_message" id="message" className="input_design" required value={fieldData.your_message}
                     onChange={handleChange} />
                 </div>
+                <div className="input_group captachaPanel">
+                  <ReCAPTCHA sitekey="Your client site key" onChange={onChange} />
+                </div>
                 <div className="input_group">
-                  <button className="btn_site" type="submit" disabled={submitting}>
+                  <button className="btn_site" type="submit" disabled={submitting} >
                     {submitting ? 'Submitting...' : 'Send'}
                   </button>
                 </div>
-                <div className="input_group">
+                <div className="input_group  " >
                   {/* {submitError && <p className="submit-error">{submitError}</p>} */}
-                  <div className="input_group">
-                    <ReCAPTCHA
-                      sitekey="Your_site_key"
-                      ref={recaptchaRef}
-                      size="invisible"
-                      onChange={onChange}
-                    />
-                  </div>
                   {submitSuccess && <div className="submit-success"> <p><img src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/good-job-hand-2-svgrepo-com.png" alt="" />Thank You For Contacting!</p> <span>We will get back to you shortly.</span></div>}
                 </div>
 

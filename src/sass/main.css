@@ -652,25 +652,42 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
 }
 
 @media screen and (max-width: 767px) {
+  header {
+    padding: 10px 10px;
+  }
   .mobileHeader {
-    display: block;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .desktopHeader {
     display: none;
   }
   .mehuToggleButton {
-    display: grid;
+    display: block;
     row-gap: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
   }
-  .mehuToggleButton span {
-    width: 6%;
-    height: 2px;
-    background: #ccc;
+  .menuLink {
+    display: none;
+  }
+  .menuLink li a {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 20px 10px;
+    display: block;
+  }
+  .logoWrap {
+    width: 60%;
+    float: right;
   }
   .logoWrap img {
     width: 100%;
+  }
+  .logoWrapHidden {
+    display: block;
   }
   .skeleton-loader {
     width: 80%;
@@ -725,6 +742,9 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
     margin: 0px auto;
     margin-top: 10px;
   }
+  .logoSection {
+    padding: 10px 0px;
+  }
   .profile_img img {
     height: 137px;
     width: 137px !important;
@@ -765,5 +785,70 @@ li.react-multi-carousel-dot.react-multi-carousel-dot--active button {
   }
   footer .footer_right .term_and_condition li a {
     font-size: 12px;
+  }
+  .page_breadcrumbs {
+    height: 50vh;
+  }
+  .page_breadcrumbs .text_panel_breadcrumbs {
+    text-align: center;
+    border-bottom: 10px solid #ed174b;
+    display: flex;
+    align-items: center;
+  }
+  .page_breadcrumbs .text_panel_breadcrumbs h1 {
+    font-size: 58px;
+  }
+  .text_panel_breadcrumbs_image {
+    display: none;
+  }
+  .about_breadcrumbs {
+    height: 50vh;
+    overflow: hidden;
+  }
+  .text_contact {
+    display: block;
+    text-align: center;
+  }
+  .text_contact p {
+    font-size: 16px;
+    margin: 15px 0px;
+  }
+  .call_panel .call_btn {
+    font-size: 16px;
+    padding: 10px 16px;
+    display: block;
+    margin: 0px auto;
+  }
+  .what_we_do_box .text_box {
+    text-align: center;
+  }
+  .what_we_do_box .text_box h3 {
+    font-size: 26px;
+  }
+  .what_we_do_box .text_box p {
+    font-size: 13px;
+    line-height: 24px;
+  }
+  .contact_form_img img {
+    width: 100%;
+  }
+  .get_in_touch {
+    margin-bottom: 1rem;
+  }
+  .get_in_touch .footer_details ul li {
+    display: flex;
+    padding: 0px;
+    gap: 10px;
+  }
+  .get_in_touch .footer_details ul li svg {
+    margin: 0px;
+    width: 20px;
+  }
+  .get_in_touch .footer_details ul li a {
+    font-size: 16px;
+  }
+  .captachaPanel {
+    width: 100%;
+    float: left;
   }
 }/*# sourceMappingURL=main.css.map */

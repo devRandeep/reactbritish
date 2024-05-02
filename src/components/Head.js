@@ -1,5 +1,5 @@
 import { Button, Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { Col, Dropdown, Row } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
@@ -8,7 +8,14 @@ import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlin
 
 export default function Header() {
   const logoImage = "https://greatbritish.b-cdn.net/wp-content/uploads/2022/01/gbt-logo.png"
-
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [logoVisible, setLogoVisible] = useState(true);
+ 
+  const toggleMenu = () => {  
+    const logoWrap = document.querySelector('.menuLink');
+    logoWrap.classList.toggle('logoWrapHidden');
+  };
+  
   return (
     <>
       <header>
@@ -40,19 +47,24 @@ export default function Header() {
           </Col>
         </Row>
 
-        <Row className="mobileHeader">
+        <Row className="mobileHeader">          
+          <div className="mehuToggleButton">
+            <span  className="toggleIcon" onClick={toggleMenu}> <img src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/menu_toggel.png" alt="" /></span>          
+          </div>
+
           <div className="logoWrap">
             <Link to="/">
               <img src={logoImage} alt="" />
             </Link>
           </div>
-          <div className="mehuToggleButton">
-            <span></span>
-            <span></span>
-            <span></span>
+
+          <div className="menuLink">
+            <ul>
+                <li><NavLink to="/" exact>Home</NavLink></li>
+                <li><NavLink to="/about" exact>About</NavLink></li>            
+            </ul>
           </div>
         </Row>
-
       </header>
     </>
   );
