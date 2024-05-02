@@ -10,12 +10,17 @@ export default function Header() {
   const logoImage = "https://greatbritish.b-cdn.net/wp-content/uploads/2022/01/gbt-logo.png"
   const [menuVisible, setMenuVisible] = useState(false);
   const [logoVisible, setLogoVisible] = useState(true);
- 
-  const toggleMenu = () => {  
+  //  Menu Open when click on toggle button;
+  const toggleMenu = () => {
     const logoWrap = document.querySelector('.menuLink');
     logoWrap.classList.toggle('logoWrapHidden');
   };
-  
+  // Menu close when click on menu; 
+  const closeMenu = () => {
+    const logoWrap = document.querySelector('.menuLink');
+    logoWrap.classList.remove('logoWrapHidden');
+  }
+
   return (
     <>
       <header>
@@ -47,9 +52,9 @@ export default function Header() {
           </Col>
         </Row>
 
-        <Row className="mobileHeader">          
+        <Row className="mobileHeader">
           <div className="mehuToggleButton">
-            <span  className="toggleIcon" onClick={toggleMenu}> <img src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/menu_toggel.png" alt="" /></span>          
+            <span className="toggleIcon" onClick={toggleMenu}> <img src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/menu_toggel.png" alt="" /></span>
           </div>
 
           <div className="logoWrap">
@@ -60,8 +65,9 @@ export default function Header() {
 
           <div className="menuLink">
             <ul>
-                <li><NavLink to="/" exact>Home</NavLink></li>
-                <li><NavLink to="/about" exact>About</NavLink></li>            
+              <li><NavLink to="/" onClick={closeMenu} exact>Home</NavLink></li>
+              <li><NavLink to="/about" onClick={closeMenu} exact>About</NavLink></li>
+              <li><NavLink to="/contactus" onClick={closeMenu} exact>Contact</NavLink></li>
             </ul>
           </div>
         </Row>
