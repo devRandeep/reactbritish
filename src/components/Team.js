@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 
-
-
-
 export default function Team() {
     const [items, setItems] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
-
-
-    const jane = "https://www.greatbritishtalent.com/static/css/img/jane.png";
-    const Steve = "https://www.greatbritishtalent.com/static/css/img/steve.png";
-
     useEffect(() => {
         fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/2/?acf_format=standard")
             .then((res) => res.json())
@@ -22,7 +14,6 @@ export default function Team() {
     }, []);
 
     if (!isLoaded) return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
-
 
     return (
         <>
