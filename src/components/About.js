@@ -29,6 +29,9 @@ export default function About() {
 
   return (
     <>
+    <Helmet>
+      <title>About  | Great British UK Talent</title>
+    </Helmet>
       <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/about/" />
 
       {/* ================= First Fold */}

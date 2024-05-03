@@ -104,6 +104,9 @@ export default function Contact() {
 
   return (
     <>
+    <Helmet>
+      <title>Contact  | Great British UK Talent</title>
+    </Helmet>
       <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/contact/" />
       <Pagebread />
       {/* ==================== Get In Touch */}

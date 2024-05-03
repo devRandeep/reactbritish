@@ -12,8 +12,10 @@ import Headers from "./Headers";
 
 function Home() {
 	return (
-		<>	 
-    	
+		<>
+			<Helmet>
+				<title>Home  | Great British UK Talent</title>
+			</Helmet>
 			{/* First Fold  ====== Section First */}
 
 			<Hero />
