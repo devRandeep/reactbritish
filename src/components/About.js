@@ -10,8 +10,9 @@ import { render } from "react-dom";
 import SeoApi from "./SeoApi";
 // import { Helmet, HelmetProvider } from "react-helmet-async";
 export default function About() {
-  const [items, setItems] = useState({});
 
+  const [items, setItems] = useState({});
+  
   useEffect(() => {
     fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/3069")
       .then((res) => res.json())
@@ -29,9 +30,9 @@ export default function About() {
 
   return (
     <>
-    <Helmet>
-      <title>About  | Great British UK Talent</title>
-    </Helmet>
+      <Helmet>
+        <title>About  | Great British UK Talent</title>
+      </Helmet>
       <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/about/" />
 
       {/* ================= First Fold */}
@@ -47,12 +48,13 @@ export default function About() {
               <img src={items.right_image} alt="" />
             </div>
           </Col>
-
         </Row>
       </section>
+      
       <div className="about_callpanel">
         <Callnumber />
       </div>
+
       <section className="what_we_do aboutUs">
         <div className="img_box">
           <img src={items.about_image} alt="" />
@@ -66,6 +68,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      
       <div className="about_supply">
         <Wesupply />
       </div>

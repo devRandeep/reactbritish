@@ -36,7 +36,7 @@ export default function Contact() {
     return <div className='please_wait'> <div class="loader"> </div><span>Data Loading....</span></div>;
   }
 
-
+  // *********** Form Validation *******************//;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFieldData({
@@ -51,7 +51,6 @@ export default function Contact() {
     setSubmitError(null);
     setSubmitSuccess(false);
 
-    // Email validation 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(fieldData.your_email)) {
@@ -83,18 +82,16 @@ export default function Contact() {
           your_message: '',
           _wpcf7_unit_tag: 1932
         });
-        // alert('Form Submitted Successfully !!');
         setSubmitting(false);
       })
       .catch(error => {
-        // Handle error
         console.error('There was a problem submitting the form:', error);
         setSubmitting(false);
         setSubmitError('There was a problem submitting the form. Please try again later.');
       });
   };
 
-  // This function for ReCAPTCHA;  
+  // ************* This function for ReCAPTCHA *********** //;  
   const ReCaptcha = () => {
     const [Verified, setVerifed] = useState(false);
   }
@@ -104,12 +101,13 @@ export default function Contact() {
 
   return (
     <>
-    <Helmet>
-      <title>Contact  | Great British UK Talent</title>
-    </Helmet>
+      <Helmet>
+        <title>Contact  | Great British UK Talent</title>
+      </Helmet>
       <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/contact/" />
+
       <Pagebread />
-      {/* ==================== Get In Touch */}
+      {/* ==================== Get In Touch Form */}
       <section className="get_in_touch">
         <Row className="align-items-start">
           <Col md={6}>
@@ -149,9 +147,7 @@ export default function Contact() {
                   {/* {submitError && <p className="submit-error">{submitError}</p>} */}
                   {submitSuccess && <div className="submit-success"> <p><img src="https://greatbritish.b-cdn.net/wp-content//uploads/2024/05/good-job-hand-2-svgrepo-com.png" alt="" />Thank You For Contacting!</p> <span>We will get back to you shortly.</span></div>}
                 </div>
-
               </form>
-
             </div>
           </Col>
           <Col md={6}>
@@ -191,10 +187,8 @@ export default function Contact() {
               </div>
             </Col>
           </Col>
-
         </Row>
       </section>
-
       <Callnumber />
       <Team />
 

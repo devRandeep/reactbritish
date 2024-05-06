@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 export default function Whatwedo() {
 	const [items, setItems] = useState([]);
 	const [isLoaded, setIsLoaded] = useState(false);
-
+	
 	useEffect(() => {
 		fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/2/?acf_format=standard")
 			.then((res) => res.json())

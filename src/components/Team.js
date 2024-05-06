@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export default function Team() {
     const [items, setItems] = useState([]);
-	const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
         fetch("https://greatbritishtalent.com/wp-json/wp/v2/pages/2/?acf_format=standard")
             .then((res) => res.json())
@@ -48,7 +48,6 @@ export default function Team() {
                                     </div>
                                 </div>
                             </Col>
-
                             <Col>
                                 <div className=" card team_person">
                                     <div className="profile_box">
@@ -71,7 +70,6 @@ export default function Team() {
                                     </div>
                                 </div>
                             </Col>
-
                         </Row>
                     </div>
                 </Col>

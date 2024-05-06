@@ -21,10 +21,11 @@ export default function Privacy() {
 
   return (
     <>
-    <Helmet>
-      <title>Privacy Policy | Great British UK Talent</title>
-    </Helmet>
+      <Helmet>
+        <title>Privacy Policy | Great British UK Talent</title>
+      </Helmet>
       <SeoApi apiUrl="https://greatbritishtalent.com/wp-json/rankmath/v1/getHead?url=https://www.greatbritishtalent.com/privacy-policy-2/" />
+      
       <section className='terms_and_condition'>
         <div className="term_condition_text_box" dangerouslySetInnerHTML={{ __html: items.content }}>
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 
 export default function Partner() {
-    const GBLogo = [
+	const GBLogo = [
 
 		{
 			imgUrl: "https://greatbritish.b-cdn.net/wp-content/uploads/2021/03/GBS-LOGO-1.png",
@@ -17,9 +17,9 @@ export default function Partner() {
 			imgLink: "",
 		},
 	]
-  return (
-    <>
-    <section className="logoSection">
+	return (
+		<>
+			<section className="logoSection">
 				<Container>
 					<Row>
 						{GBLogo.map((itemloop, index) => (
@@ -32,6 +32,6 @@ export default function Partner() {
 					</Row>
 				</Container>
 			</section>
-    </>
-  );
+		</>
+	);
 }

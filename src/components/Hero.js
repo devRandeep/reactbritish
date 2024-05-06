@@ -35,14 +35,13 @@ export default function Hero() {
                     </Container>
                 </div>
                 <div className="column_second">
-                {isLoaded ? (
+                    {isLoaded ? (
                         <img src={items.first_section_image_home_gbuk} alt="" />
                     ) : (
                         <div className="skeleton-loader loading-animation"></div>
                     )}
                 </div>
             </section>
-
         </>
     );
 }

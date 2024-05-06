@@ -24,7 +24,7 @@ export default function Wesupply() {
             breakpoint: { max: 464, min: 0 },
             items: 1,
             gap: 10,
-            centerSlide:true,
+            centerSlide: true,
         }
     };
 
